@@ -50,6 +50,14 @@ This codebase only supports cross-lingual retrieval and multi-lingual STS tasks.
 ```
 ### Pre-trained Model:
 Our pre-trained model is available at [here](https://huggingface.co/yaushian/mSimCSE). For pre-trained cross-lingual model trained on English NLI, please download model [here](https://huggingface.co/yaushian/mSimCSE/resolve/main/xlm-roberta-large-mono_en.zip). For pre-trained cross-lingual model trained on cross-lingual NLI, please download model [here](https://huggingface.co/yaushian/mSimCSE/resolve/main/xlm-roberta-large-cross_all.zip).  
+To evaluate pre-trained models, please run:
+```bash
+cd results
+./download_model.sh
+cd ..
+./eval.sh results/xlm-roberta-large-mono_en 
+./eval.sh results/xlm-roberta-large-cross_all
+```
 
 ## Citation
 
