@@ -1,5 +1,5 @@
 ## mSimCSE
-This is the official implementation of the paper [English Contrastive Learning Can Learn Universal Cross-lingual Sentence Embeddings](arxiv.org). Our model is a multilingual version of [SimCSE](https://arxiv.org/abs/2104.08821) which maps cross-lingual sentences into a shared embedding space. Our implementation is mainly based on official [SimCSE repository](https://github.com/princeton-nlp/SimCSE). Our model can be used for cross-lingual retrieval/mining and cross-lingual sentence task evaluation.
+This is the official implementation of the paper [English Contrastive Learning Can Learn Universal Cross-lingual Sentence Embeddings](arxiv.org). Our model is a multilingual version of [SimCSE](https://arxiv.org/abs/2104.08821) which maps cross-lingual sentences into a shared embedding space. Our implementation is mainly based on official [SimCSE repository](https://github.com/princeton-nlp/SimCSE). Our model can be used for cross-lingual retrieval/mining and cross-lingual sentence embeddings evaluation.
 
 ## Getting Started:
 ### Step 1: Build virtual environment.
@@ -9,7 +9,7 @@ conda activate mSimCSE
 ```
 
 ### Step 2: Install Packages
-Before install requirements.txt, install [pytorch](https://pytorch.org/get-started/locally/) from the official website. We test our model on pytorch LTS(1.8.2). It should also work on later version.
+Before install requirements.txt, install [pytorch](https://pytorch.org/get-started/locally/) from the official website. We test our model on pytorch LTS(1.8.2). It should also work on a later version.
 ```bash
 pip install -r requirements.txt
 ```
@@ -22,8 +22,7 @@ cd data
 ./download_nli.sh
 ./download_xnli.sh
 ./download_bucc.sh
-cd ..
-cd SentEval/data/downstream/
+cd ../SentEval/data/downstream/
 ./download_dataset.sh
 cd ../../..
 python3 merge_multi_lingual.py
@@ -44,7 +43,7 @@ Notice that in cross-lingual NLI training, using a larger batch size and larger 
 
 
 ### Testing:
-This codebase only supports cross-lingual retrieval and multi-lingual STS tasks. The "model_dir" denotes the "output_dir" in the training script. 
+We evaluate model performance on cross-lingual retrieval (BUCC and Tatoeba) and multi-lingual STS tasks. The "model_dir" denotes the "output_dir" in the training script. 
 ```bash
 ./eval.sh [model_dir]
 ```
